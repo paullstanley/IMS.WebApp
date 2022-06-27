@@ -1,0 +1,17 @@
+/Users/paullstanley/Projects/IMS.WebApp/IMS.Plugins.EFCore/bin/Debug/net6.0/IMS.Plugins.EFCore.deps.json
+/Users/paullstanley/Projects/IMS.WebApp/IMS.Plugins.EFCore/bin/Debug/net6.0/IMS.Plugins.EFCore.dll
+/Users/paullstanley/Projects/IMS.WebApp/IMS.Plugins.EFCore/bin/Debug/net6.0/IMS.Plugins.EFCore.pdb
+/Users/paullstanley/Projects/IMS.WebApp/IMS.Plugins.EFCore/bin/Debug/net6.0/IMS.CoreBusiness.dll
+/Users/paullstanley/Projects/IMS.WebApp/IMS.Plugins.EFCore/bin/Debug/net6.0/IMS.UseCases.dll
+/Users/paullstanley/Projects/IMS.WebApp/IMS.Plugins.EFCore/bin/Debug/net6.0/IMS.CoreBusiness.pdb
+/Users/paullstanley/Projects/IMS.WebApp/IMS.Plugins.EFCore/bin/Debug/net6.0/IMS.UseCases.pdb
+/Users/paullstanley/Projects/IMS.WebApp/IMS.Plugins.EFCore/obj/Debug/net6.0/IMS.Plugins.EFCore.csproj.AssemblyReference.cache
+/Users/paullstanley/Projects/IMS.WebApp/IMS.Plugins.EFCore/obj/Debug/net6.0/IMS.Plugins.EFCore.GeneratedMSBuildEditorConfig.editorconfig
+/Users/paullstanley/Projects/IMS.WebApp/IMS.Plugins.EFCore/obj/Debug/net6.0/IMS.Plugins.EFCore.AssemblyInfoInputs.cache
+/Users/paullstanley/Projects/IMS.WebApp/IMS.Plugins.EFCore/obj/Debug/net6.0/IMS.Plugins.EFCore.AssemblyInfo.cs
+/Users/paullstanley/Projects/IMS.WebApp/IMS.Plugins.EFCore/obj/Debug/net6.0/IMS.Plugins.EFCore.csproj.CoreCompileInputs.cache
+/Users/paullstanley/Projects/IMS.WebApp/IMS.Plugins.EFCore/obj/Debug/net6.0/IMS.Plugins.EFCore.csproj.CopyComplete
+/Users/paullstanley/Projects/IMS.WebApp/IMS.Plugins.EFCore/obj/Debug/net6.0/IMS.Plugins.EFCore.dll
+/Users/paullstanley/Projects/IMS.WebApp/IMS.Plugins.EFCore/obj/Debug/net6.0/refint/IMS.Plugins.EFCore.dll
+/Users/paullstanley/Projects/IMS.WebApp/IMS.Plugins.EFCore/obj/Debug/net6.0/IMS.Plugins.EFCore.pdb
+/Users/paullstanley/Projects/IMS.WebApp/IMS.Plugins.EFCore/obj/Debug/net6.0/ref/IMS.Plugins.EFCore.dll

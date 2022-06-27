@@ -1,0 +1,38 @@
+﻿<Properties StartupConfiguration="{2861D5E2-25AD-4956-9CA5-B5AF54244F9A}|Default">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="IMS.WebApp/Program.cs">
+    <Files>
+      <File FileName="IMS.Plugins.EFCore/IMSContext.cs" Line="17" Column="10" />
+      <File FileName="IMS.WebApp/Pages/InventoryList.razor" Line="35" Column="21" />
+      <File FileName="IMS.CoreBusiness/Inventory.cs" Line="4" Column="14" />
+      <File FileName="IMS.WebApp/Controls/ViewInventoriesComponent.razor" Line="1" Column="1" />
+      <File FileName="IMS.WebApp/Program.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Option id="ShowAllFiles" value="True" />
+          <Node name="IMS.WebApp" expanded="True">
+            <Node name="IMS.CoreBusiness" expanded="True" />
+            <Node name="IMS.Plugins.EFCore" expanded="True" />
+            <Node name="IMS.UseCases" expanded="True" />
+            <Node name="IMS.WebApp" expanded="True">
+              <Node name="Controls" expanded="True" />
+              <Node name="Pages" expanded="True" />
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.IMS.WebApp PreferredExecutionTarget="/Applications/Safari.app" />
+</Properties>
