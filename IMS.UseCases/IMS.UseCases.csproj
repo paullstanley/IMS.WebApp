@@ -12,9 +12,11 @@
   <ItemGroup>
     <None Remove="PluginInterfaces\" />
     <None Remove="Interfaces\" />
+    <None Remove="Inventories\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="PluginInterfaces\" />
     <Folder Include="Interfaces\" />
+    <Folder Include="Inventories\" />
   </ItemGroup>
 </Project>

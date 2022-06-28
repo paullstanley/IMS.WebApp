@@ -1,0 +1,31 @@
+﻿@if (Product != null)
+    {
+    <tr>
+        <td>@Product.ProductName</td>
+        <td>@Product.Quantity</td>
+        <td>@Product.Price.ToString("c")</td>
+        <td>
+            <button type="button" class="btn btn-light" @onclick="@(() => EditProduct(Product.ProductId))">Edit</button>
+            <button type="button" class="btn btn-light" @onclick="@(() => DeleteProduct(Product))">Delete</button>
+        </td>
+    </tr>
+    }
+
+
+@code {
+
+    [Parameter]
+    public Product? Product { get; set; }
+
+    private void EditProduct(int productId)
+    {
+
+    }
+
+    private void DeleteProduct(Product product)
+    {
+
+    }
+
+}
+

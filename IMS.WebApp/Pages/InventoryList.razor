@@ -1,43 +1,53 @@
 ﻿@page "/inventories"
 
+@inject NavigationManager NavigationManager
+@inject IViewInventoriesByNameUseCase ViewInventoriesByNameUseCase
+
 <h3>Inventory List</h3>
 <br />
 <ViewInventoriesComponent OnSearchInventories="OnSearchInventories"></ViewInventoriesComponent>
 
 @if (listInventories != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var inv in this.listInventories)
             {
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Quantity</th>
-                            <th>Price</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach(var inv in this.listInventories)
-                {
-                    <tr>
-                        <td>@inv.InventoryName</td>
-                        <td>@inv.Quantity</td>
-                        <td>@inv.Price.ToString("c")</td>
-                        <td>
-                            <button type="button" class="btn btn-light">Edit</button>
-                        </td>
-                    </tr>
-                }
-                    </tbody>
-                </table>
+                <InventoryItemComponent Inventory="inv"></InventoryItemComponent>
             }
+        </tbody>
+    </table>
+}
+<br />
+<button type="button" class="btn btn-primary" @onclick="AddInventory">Add Inventory</button>
+
 
 @code {
-    private List<Inventory> listInventories;
+    private List<Inventory>? listInventories;
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        var invs = await ViewInventoriesByNameUseCase.ExecuteAsync();
+        this.listInventories = invs.ToList();
+    }
 
     private void OnSearchInventories(List<Inventory> inventories)
     {
         listInventories = inventories;
     }
 
+    private void AddInventory()
+    {
+        NavigationManager.NavigateTo("/addinventory");
+    }
 }
 

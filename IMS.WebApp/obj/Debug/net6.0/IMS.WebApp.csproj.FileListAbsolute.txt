@@ -1,7 +1,6 @@
 /Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/bin/Debug/net6.0/appsettings.Development.json
 /Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/bin/Debug/net6.0/appsettings.json
 /Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/bin/Debug/net6.0/IMS.WebApp.staticwebassets.runtime.json
-/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/bin/Debug/net6.0/app.db
 /Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/bin/Debug/net6.0/IMS.WebApp
 /Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/bin/Debug/net6.0/IMS.WebApp.deps.json
 /Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/bin/Debug/net6.0/IMS.WebApp.runtimeconfig.json
@@ -17,6 +16,7 @@
 /Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll
 /Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll
 /Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Design.dll
+/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.InMemory.dll
 /Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Relational.dll
 /Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Sqlite.dll
 /Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/bin/Debug/net6.0/Microsoft.Extensions.Caching.Memory.dll
@@ -42,6 +42,12 @@
 /Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/bin/Debug/net6.0/runtimes/win-arm64/native/e_sqlite3.dll
 /Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/bin/Debug/net6.0/runtimes/win-x64/native/e_sqlite3.dll
 /Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/bin/Debug/net6.0/runtimes/win-x86/native/e_sqlite3.dll
+/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/bin/Debug/net6.0/IMS.CoreBusiness.dll
+/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/bin/Debug/net6.0/IMS.Plugins.EFCore.dll
+/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/bin/Debug/net6.0/IMS.UseCases.dll
+/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/bin/Debug/net6.0/IMS.Plugins.EFCore.pdb
+/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/bin/Debug/net6.0/IMS.CoreBusiness.pdb
+/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/bin/Debug/net6.0/IMS.UseCases.pdb
 /Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/obj/Debug/net6.0/IMS.WebApp.csproj.AssemblyReference.cache
 /Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/obj/Debug/net6.0/IMS.WebApp.GeneratedMSBuildEditorConfig.editorconfig
 /Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/obj/Debug/net6.0/IMS.WebApp.AssemblyInfoInputs.cache
@@ -63,10 +69,3 @@
 /Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/obj/Debug/net6.0/IMS.WebApp.pdb
 /Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/obj/Debug/net6.0/IMS.WebApp.genruntimeconfig.cache
 /Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/obj/Debug/net6.0/ref/IMS.WebApp.dll
-/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.InMemory.dll
-/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/bin/Debug/net6.0/IMS.CoreBusiness.dll
-/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/bin/Debug/net6.0/IMS.Plugins.EFCore.dll
-/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/bin/Debug/net6.0/IMS.UseCases.dll
-/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/bin/Debug/net6.0/IMS.Plugins.EFCore.pdb
-/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/bin/Debug/net6.0/IMS.CoreBusiness.pdb
-/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/bin/Debug/net6.0/IMS.UseCases.pdb

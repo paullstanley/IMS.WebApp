@@ -1,8 +1,5 @@
-﻿using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
-using Microsoft.AspNetCore.Components.Authorization;
+﻿using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
 using IMS.WebApp.Areas.Identity;
 using IMS.WebApp.Data;
@@ -15,6 +12,7 @@ internal class Program
     private static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+
 
         // Add services to the container.
         var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -34,18 +32,23 @@ internal class Program
         });
         //DI repos
         builder.Services.AddTransient<IInventoryRepository, InventoryRepository>();
+        builder.Services.AddTransient<IProductRepository, ProductRepository>();
 
         //DI use cases
         builder.Services.AddTransient<IViewInventoriesByNameUseCase, ViewInventoriesByNameUseCase>();
+        builder.Services.AddTransient<IAddInventoryUseCase, AddInventoryUseCase>();
+        builder.Services.AddTransient<IEditInventoryUseCase, EditInventoryUseCase>();
+        builder.Services.AddTransient<IViewInventoryByIdUseCase, ViewInventoryByIdUseCase>();
+
+        builder.Services.AddTransient<IViewProductsByNameUseCase, ViewProductsByNameUseCase>();
+        builder.Services.AddTransient<IAddProductUseCase, AddProductUseCase>();
 
         var app = builder.Build();
 
-        var scope = app.Services.CreateAsyncScope();
+        var scope = app.Services.CreateScope();
         var imsContext = scope.ServiceProvider.GetRequiredService<IMSContext>();
         imsContext.Database.EnsureDeleted();
         imsContext.Database.EnsureCreated();
-
-
 
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
