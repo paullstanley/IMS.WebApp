@@ -39,10 +39,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29udHJvbHMvVmlld1Byb2R1Y3RzQ29tcG9uZW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/Pages/AddInventory.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRkSW52ZW50b3J5LnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/Pages/AddProduct.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRkUHJvZHVjdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -51,8 +47,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/Pages/EditInventory.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRWRpdEludmVudG9yeS5yYXpvcg==
+[/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/Pages/EditProduct.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRWRpdFByb2R1Y3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/Pages/FetchData.razor]
@@ -63,8 +59,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/Pages/InventoryList.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW52ZW50b3J5TGlzdC5yYXpvcg==
+[/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/Pages/Inventories/AddInventory.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW52ZW50b3JpZXMvQWRkSW52ZW50b3J5LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/Pages/Inventories/EditInventory.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW52ZW50b3JpZXMvRWRpdEludmVudG9yeS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/Pages/Inventories/InventoryList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW52ZW50b3JpZXMvSW52ZW50b3J5TGlzdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/Pages/PoductList.razor]

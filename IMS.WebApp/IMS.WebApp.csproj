@@ -11,6 +11,7 @@
     <None Remove="Microsoft.EntityFrameworkCore.InMemory" />
     <None Remove="Controls\" />
     <None Remove="Data\Migrations\" />
+    <None Remove="Pages\Inventories\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.6" />
@@ -38,5 +39,6 @@
   <ItemGroup>
     <Folder Include="Controls\" />
     <Folder Include="Data\Migrations\" />
+    <Folder Include="Pages\Inventories\" />
   </ItemGroup>
 </Project>

@@ -6,8 +6,11 @@ namespace IMS.UseCases.PluginInterfaces
 	{
 		Task AddProductAsync(Product product);
 
-		Task<List<Product>> GetProductsByName(string name);
-        
-	}
+		Task<List<Product>> GetProductsByNameAsync(string name);
+
+		Task<Product> GetProductByIdAsync(int productId);
+
+        Task UpdateProductAsync(Product product);
+    }
 }
 
