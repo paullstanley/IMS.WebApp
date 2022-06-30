@@ -1,6 +1,6 @@
 ﻿@inject IViewInventoriesByNameUseCase ViewInventoriesByNameUseCase
 
-<div class="input-group mb-3">
+<div class="input-group">
     <input type="text"
            class="form-control form-control-lg"
            placeholder="Type inventory name here to search"
@@ -12,7 +12,7 @@
         && _inventories != null
         && selectedInventory == null)
 {
-    <div style="overflow-y:auto; max-height:300px">
+    <div style="overflow-y:auto; max-height:300px; border:1px solid silver">
         <ul style="list-style-type:none">
             @foreach(var inv in _inventories)
             {

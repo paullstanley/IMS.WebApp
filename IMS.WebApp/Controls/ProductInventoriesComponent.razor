@@ -3,7 +3,7 @@
     <ViewInventoriesComponent DisplaySearchResult="true"
                               OnSelectInventory="OnSelectInventory"></ViewInventoriesComponent>
 </div>
-@if (productInventories != null && productInventories.Count > 0)
+@if (ProductInventories != null && ProductInventories.Count > 0)
 {
     <table class="table">
         <thead>
@@ -14,18 +14,20 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var productInventory in this.productInventories)
+            @foreach (var productInventory in this.ProductInventories)
             {
                 <tr>
                     <td>
                         @productInventory.Inventory.InventoryName
                     </td>
                     <td>
-                        <input type="number" min="0" max="@productInventory.Inventory.Quantity" @bind-value="productInventory.InventoryQuantity" />
+                        <input type="number" min="0"
+                               @bind-value="productInventory.InventoryQuantity"
+                               @bind-value:event="oninput"
+                               @onchange="OnInventoryQtyChanged" />
                     </td>
                     <td>
                         <button class="btn btn-link" type="button" @onclick="@(() => RemoveInventory(productInventory))">Remove</button>
-
                     </td>
                 </tr>
             }
@@ -36,19 +38,30 @@
 
 
 @code {
-    public List<ProductInventory> productInventories = new List<ProductInventory>();
 
-    private void OnSelectInventory(Inventory inventory)
+    [Parameter]
+    public EventCallback<List<ProductInventory>> OnInventorySelected { get; set; }
+
+    public List<ProductInventory> ProductInventories = new List<ProductInventory>();
+
+    private async Task OnInventoryQtyChanged()
     {
-        if (!productInventories.Any(x => x.Inventory.InventoryName.Equals(inventory.InventoryName, StringComparison.OrdinalIgnoreCase)))
+        await OnInventorySelected.InvokeAsync(this.ProductInventories);
+    }
+
+    private async Task OnSelectInventory(Inventory inventory)
+    {
+        if (!ProductInventories.Any(x => x.Inventory.InventoryName.Equals(inventory.InventoryName, StringComparison.OrdinalIgnoreCase)))
         {
-            this.productInventories.Add(new ProductInventory {  InventoryId = inventory.InventoryId, Inventory = inventory});
+            this.ProductInventories.Add(new ProductInventory { InventoryId = inventory.InventoryId, Inventory = inventory });
         }
+
+        await OnInventorySelected.InvokeAsync(this.ProductInventories);
     }
 
     private void RemoveInventory(ProductInventory productInventory)
     {
-        this.productInventories.Remove(productInventory);
+        this.ProductInventories.Remove(productInventory);
     }
 }
 
