@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using IMS.CoreBusiness.Validations;
+using System.Threading.Tasks;
 
 namespace IMS.CoreBusiness
 {
@@ -15,7 +16,10 @@ namespace IMS.CoreBusiness
 
         [Range(0, double.MaxValue, ErrorMessage = "Price must be greater or equal to {0}")]
         [Product_EnsurePriceIsGreaterThanInventoriesPrice]
+
         public double Price { get; set; }
+
+        public bool IsActive { get; set; } = true;
 
         public List<ProductInventory>? ProductInventories { get; set; }
 

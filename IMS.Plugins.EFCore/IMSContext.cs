@@ -3,15 +3,19 @@ using Microsoft.EntityFrameworkCore;
 
 namespace IMS.Plugins.EFCore
 {
-    public class IMSContext: DbContext 
-	{
-		public IMSContext(DbContextOptions options) : base(options)
+    public class IMSContext : DbContext
+    {
+        public IMSContext(DbContextOptions options) : base(options)
         {
 
         }
 
         public DbSet<Inventory> Inventories { get; set; }
         public DbSet<Product> Products { get; set; }
+
+        public DbSet<InventoryTransaction> InventoryTransactions { get; set; }
+
+        public DbSet<ProductTransaction> ProductTransaction { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

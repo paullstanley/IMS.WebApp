@@ -13,10 +13,12 @@
     <None Remove="PluginInterfaces\" />
     <None Remove="Interfaces\" />
     <None Remove="Inventories\" />
+    <None Remove="Products\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="PluginInterfaces\" />
     <Folder Include="Interfaces\" />
     <Folder Include="Inventories\" />
+    <Folder Include="Products\" />
   </ItemGroup>
 </Project>

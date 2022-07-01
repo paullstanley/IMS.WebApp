@@ -1,30 +1,81 @@
 ﻿@using IMS.CoreBusiness
 @inject IViewProductsByNameUseCase ViewProductsByNameUseCase
 
-<div class="input-group mb-3">
+<div class="input-group">
     <input type="text"
            class="form-control form-control-lg"
            placeholder="Type product name here to search"
-           @bind-value="productNameToSearch"/>
+           @bind-value="_productNameToSearch"
+           @bind-value:event="oninput"
+           />
     <button type="button" class="input-group-text btn-success"
-            @onclick="@(async ()=> { await ViewProducts(); } )">View</button>
+            @onclick="@(async ()=> { await ViewProducts(); } )">
+        View
+    </button>
 </div>
-<br />
+
+@if (this.DisplaySearchResult
+       && _products != null
+       && selectedProduct == null)
+{
+    <div style="overflow-y:auto; max-height:300px; border:1px solid silver; padding-top:5px">
+        <ul style="list-style-type:none">
+            @foreach (var inv in _products)
+            {
+                <li style="cursor:pointer" @onclick="@(async() => { await SelectProduct(inv); })"
+                    @key="inv.ProductId">@inv.ProductName</li>
+                }
+        </ul>
+    </div>
+}
 
 
 @code {
 
-    private string? productNameToSearch;
+    private string? _productNameToSearch;
+    public string productNameToSearch
+    {
+        get => _productNameToSearch;
+        set
+        {
+            _productNameToSearch = value;
+            if (!string.IsNullOrWhiteSpace(_productNameToSearch) &&
+                _productNameToSearch.Length > 2)
+            {
+                ViewProducts();
+            }
+
+        }
+    }
+
+    private List<Product>? _products;
+    private Product? selectedProduct;
 
     [Parameter]
-    public EventCallback<List<Product>> OnSearchProducts{ get; set; }
+    public EventCallback<List<Product>> OnSearchProducts { get; set; }
+
+    [Parameter]
+    public bool DisplaySearchResult { get; set; } = false;
+
+    [Parameter]
+    public EventCallback<Product> OnSelectProduct { get; set; }
 
     private async Task ViewProducts()
     {
         var products = (await ViewProductsByNameUseCase
-            .ExecuteAsync(productNameToSearch??string.Empty))?.ToList();
+            .ExecuteAsync(productNameToSearch ?? string.Empty))?.ToList();
 
         await OnSearchProducts.InvokeAsync(products);
+        _products = products;
+        this.selectedProduct = null;
+
+        StateHasChanged();
+    }
+
+    private async Task SelectProduct(Product product)
+    {
+        await OnSelectProduct.InvokeAsync(product);
+        selectedProduct = product;
     }
 }
 
