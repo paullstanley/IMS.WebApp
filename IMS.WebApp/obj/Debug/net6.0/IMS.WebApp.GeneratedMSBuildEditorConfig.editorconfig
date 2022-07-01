@@ -43,6 +43,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29udHJvbHMvVmlld1Byb2R1Y3RzQ29tcG9uZW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/Pages/Activities/ProduceProduct.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWN0aXZpdGllcy9Qcm9kdWNlUHJvZHVjdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/Pages/Activities/PurchaseInventory.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWN0aXZpdGllcy9QdXJjaGFzZUludmVudG9yeS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/Pages/Activities/SellProduct.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWN0aXZpdGllcy9TZWxsUHJvZHVjdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -67,10 +79,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW52ZW50b3JpZXMvSW52ZW50b3J5TGlzdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/Pages/ProduceProduct.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJvZHVjZVByb2R1Y3QucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
 [/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/Pages/Products/AddProduct.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJvZHVjdHMvQWRkUHJvZHVjdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -83,12 +91,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJvZHVjdHMvUG9kdWN0TGlzdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/Pages/PurchaseInventory.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHVyY2hhc2VJbnZlbnRvcnkucmF6b3I=
+[/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/Pages/Reports/InventoryTransactions.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVwb3J0cy9JbnZlbnRvcnlUcmFuc2FjdGlvbnMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/Pages/SellProduct.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2VsbFByb2R1Y3QucmF6b3I=
+[/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/Pages/Reports/ProductTransactions.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVwb3J0cy9Qcm9kdWN0VHJhbnNhY3Rpb25zLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/Shared/LoginDisplay.razor]

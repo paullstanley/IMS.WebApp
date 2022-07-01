@@ -14,6 +14,8 @@
     <None Remove="Pages\Inventories\" />
     <None Remove="Pages\Products\" />
     <None Remove="ViewModels\" />
+    <None Remove="Pages\Activities\" />
+    <None Remove="Pages\Reports\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.6" />
@@ -44,5 +46,7 @@
     <Folder Include="Pages\Inventories\" />
     <Folder Include="Pages\Products\" />
     <Folder Include="ViewModels\" />
+    <Folder Include="Pages\Activities\" />
+    <Folder Include="Pages\Reports\" />
   </ItemGroup>
 </Project>

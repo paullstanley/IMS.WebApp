@@ -14,11 +14,17 @@
     <None Remove="Interfaces\" />
     <None Remove="Inventories\" />
     <None Remove="Products\" />
+    <None Remove="Validations\" />
+    <None Remove="Activities\" />
+    <None Remove="Reports\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="PluginInterfaces\" />
     <Folder Include="Interfaces\" />
     <Folder Include="Inventories\" />
     <Folder Include="Products\" />
+    <Folder Include="Validations\" />
+    <Folder Include="Activities\" />
+    <Folder Include="Reports\" />
   </ItemGroup>
 </Project>

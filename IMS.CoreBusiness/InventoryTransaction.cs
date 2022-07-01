@@ -5,7 +5,6 @@ namespace IMS.CoreBusiness
 {
 	public class InventoryTransaction
 	{
-
 		public int InventoryTransactionId { get; set; }
 
         [Required]
