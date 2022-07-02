@@ -1,0 +1,15 @@
+/Users/paullstanley/Projects/IMS.WebApp/IMS.UseCases/bin/Release/net6.0/IMS.UseCases.deps.json
+/Users/paullstanley/Projects/IMS.WebApp/IMS.UseCases/bin/Release/net6.0/IMS.UseCases.dll
+/Users/paullstanley/Projects/IMS.WebApp/IMS.UseCases/bin/Release/net6.0/IMS.UseCases.pdb
+/Users/paullstanley/Projects/IMS.WebApp/IMS.UseCases/bin/Release/net6.0/IMS.CoreBusiness.dll
+/Users/paullstanley/Projects/IMS.WebApp/IMS.UseCases/bin/Release/net6.0/IMS.CoreBusiness.pdb
+/Users/paullstanley/Projects/IMS.WebApp/IMS.UseCases/obj/Release/net6.0/IMS.UseCases.csproj.AssemblyReference.cache
+/Users/paullstanley/Projects/IMS.WebApp/IMS.UseCases/obj/Release/net6.0/IMS.UseCases.GeneratedMSBuildEditorConfig.editorconfig
+/Users/paullstanley/Projects/IMS.WebApp/IMS.UseCases/obj/Release/net6.0/IMS.UseCases.AssemblyInfoInputs.cache
+/Users/paullstanley/Projects/IMS.WebApp/IMS.UseCases/obj/Release/net6.0/IMS.UseCases.AssemblyInfo.cs
+/Users/paullstanley/Projects/IMS.WebApp/IMS.UseCases/obj/Release/net6.0/IMS.UseCases.csproj.CoreCompileInputs.cache
+/Users/paullstanley/Projects/IMS.WebApp/IMS.UseCases/obj/Release/net6.0/IMS.UseCases.csproj.CopyComplete
+/Users/paullstanley/Projects/IMS.WebApp/IMS.UseCases/obj/Release/net6.0/IMS.UseCases.dll
+/Users/paullstanley/Projects/IMS.WebApp/IMS.UseCases/obj/Release/net6.0/refint/IMS.UseCases.dll
+/Users/paullstanley/Projects/IMS.WebApp/IMS.UseCases/obj/Release/net6.0/IMS.UseCases.pdb
+/Users/paullstanley/Projects/IMS.WebApp/IMS.UseCases/obj/Release/net6.0/ref/IMS.UseCases.dll

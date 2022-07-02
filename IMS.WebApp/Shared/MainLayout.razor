@@ -29,59 +29,62 @@
                     <NavLink class="nav-link dropdown-toggle" href="#" @onclick="ToggleSubNavMenu" id="navbarDropdown">
                         Activities
                     </NavLink>
+                    @*The dropdown menu is fun to learn how it works. You can download the source code and take a look*@
                     @if (expandSubNavSettings)
-            {
-                <ul class="dropdown-menu show" aria-labelledby="navDropdown" @onclick="ToggleSubNavMenu">
-                    <li class="nav-item">
-                        <NavLink class="dropdown-item" href="purchase">
-                            <span class="oi oi-fork" area-hidden="true"></span> Purchase
-                        </NavLink>
-                    </li>
-                    <li class="Nav-item">
-                        <NavLink class="dropdown-item" href="produce">
-                            <span class="oi oi-command" aria-hidden="true"></span> Produce
-                        </NavLink>
-                    </li>
-                    <li class="Nav-item">
-                        <NavLink class="dropdown-item" href="sell">
-                            <span class="oi oi-command" aria-hidden="true"></span> Sell
-                        </NavLink>
-                    </li>
-                </ul>
-            }
+                    {
+                        <ul class="dropdown-menu show" aria-labelledby="navbarDropdown" @onclick="ToggleSubNavMenu">
+                            <li class="nav-item">
+                                <NavLink class="dropdown-item" href="purchase">
+                                    <span class="oi oi-fork" aria-hidden="true"></span> Purchase
+                                </NavLink>
+                            </li>
+                            <li class="nav-item">
+                                <NavLink class="dropdown-item" href="produce">
+                                    <span class="oi oi-command" aria-hidden="true"></span> Produce
+                                </NavLink>
+                            </li>
+                            <li class="nav-item">
+                                <NavLink class="dropdown-item" href="sell">
+                                    <span class="oi oi-home" aria-hidden="true"></span> Sell
+                                </NavLink>
+                            </li>
+                        </ul>
+                    }
                 </li>
                 <li class="nav-item dropdown">
                     <NavLink class="nav-link dropdown-toggle" href="#" @onclick="ToggleSubNavMenu1" id="navbarDropdown">
                         Reports
                     </NavLink>
                     @if (expandSubNavSettings1)
-            {
-                <ul class="dropdown-menu show" aria-labelledby="navbarDropdown" @onclick="ToggleSubNavMenu1">
-                    <li class="nav-item">
-                        <NavLink class="dropdown-item" href="inventoryreport">
-                            <span class="oi oi-fork" aria-hidden="true"></span> Inventory Transactions
-                        </NavLink>
-                    </li>
-                    <li class="nav-item">
-                        <NavLink class="dropdown-item" href="productreport">
-                            <span class="oi oi-command" aria-hidden="true"></span> Product Transactions
-                        </NavLink>
-                    </li>
-                </ul>
-            }
+                    {
+                        <ul class="dropdown-menu show" aria-labelledby="navbarDropdown" @onclick="ToggleSubNavMenu1">
+                            <li class="nav-item">
+                                <NavLink class="dropdown-item" href="inventoryreport">
+                                    <span class="oi oi-fork" aria-hidden="true"></span> Inventory Transactions
+                                </NavLink>
+                            </li>
+                            <li class="nav-item">
+                                <NavLink class="dropdown-item" href="productreport">
+                                    <span class="oi oi-command" aria-hidden="true"></span> Product Transactions
+                                </NavLink>
+                            </li>
+
+                        </ul>
+                    }
                 </li>
             </ul>
-                <LoginDisplay></LoginDisplay>
+            <LoginDisplay></LoginDisplay>
         </div>
     </div>
 </nav>
 <br />
 <main class="content px-3">
     <br />
-<div class="bg-light p-5 rounded">
-    @Body
-</div>
+    <div class="bg-light p-5 rounded">
+        @Body
+    </div>
 </main>
+
 
 @code{
     bool collapseNavMenu = true;
@@ -89,13 +92,14 @@
     private bool expandSubNavSettings;
     private bool expandSubNavSettings1;
 
+
     string baseMenuClass = "navbar-collapse offcanvas-collapse";
 
     string NavMenuCssClass => baseMenuClass + (collapseNavMenu ? " collapse" : "");
 
     void ToggleNavMenu()
     {
-        if(!expandSubNavSettings)
+        if (!expandSubNavSettings)
         {
             collapseNavMenu = !collapseNavMenu;
         }

@@ -1,8 +1,7 @@
 ﻿@page "/inventoryreport"
 
-@inject ISearchInventoryTransactionUseCase SearchInventoryTransactionUseCase
+@inject ISearchInventoryTransactionsUseCase SearchInventoryTransactionsUseCase
 @inject IJSRuntime JSRuntime
-
 
 <h3>Inventory Transactions</h3>
 <br />
@@ -25,13 +24,13 @@
             <label for="at">Activity Type</label>
             <select id="at" class="form-control" @bind="activityTypeId">
                 <option value="0"></option>
-                <option value="1">Product Inventory</option>
-                <option value="2">Product Product</option>
+                <option value="1">Purchase Inventory</option>
+                <option value="2">Produce Product</option>
             </select>
         </div>
         <div class="col">
             <label>&nbsp;</label>
-            <button type="button" class="btn btn-primary form-control" @onclick="@(async() => { await SearchInventories(); })">Search</button>
+            <button type="button" class="btn btn-primary form-control" @onclick="SearchInventories">Search</button>
         </div>
         <div class="col">
             <label>&nbsp;</label>
@@ -46,6 +45,7 @@
                 <tr>
                     <th>Date</th>
                     <th>Inventory</th>
+                    <th>Activity</th>
                     <th>Qty Before</th>
                     <th>Qty After</th>
                     <th>PO#</th>
@@ -79,31 +79,27 @@
     }
 </div>
 
-    @code {
-        private string invName;
-        private DateTime? dateFrom;
-        private DateTime? dateTo;
-        private int activityTypeId = 0;
-        private IEnumerable<InventoryTransaction> inventoryTransactions;
+@code {
+    private string invName;
+    private DateTime? dateFrom;
+    private DateTime? dateTo;
+    private int activityTypeId = 0;
+    private IEnumerable<InventoryTransaction> inventoryTransactions;
 
-        private async Task SearchInventories()
-        {
-            InventoryTransactionType? inventoryTransactionType = null;
+    private async Task SearchInventories()
+    {
+        InventoryTransactionType? inventoryTransactionType = null;
+        if (activityTypeId != 0) inventoryTransactionType = (InventoryTransactionType)activityTypeId;
 
-            if (activityTypeId != 0) inventoryTransactionType = (InventoryTransactionType)activityTypeId;
-
-            inventoryTransactions = await SearchInventoryTransactionUseCase.ExecuteAsync(
-                invName,
-                dateFrom,
-                dateTo,
-                inventoryTransactionType);
-
-        }
-
-        private void PrintReport()
-        {
-            JSRuntime.InvokeVoidAsync("print");
-        }
-
+        inventoryTransactions = await SearchInventoryTransactionsUseCase.ExecuteAsync(
+            invName,
+            dateFrom,
+            dateTo,
+            inventoryTransactionType);
     }
 
+    private void PrintReport()
+    {
+        JSRuntime.InvokeVoidAsync("print");
+    }
+}

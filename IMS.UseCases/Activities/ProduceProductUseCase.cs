@@ -7,13 +7,13 @@ namespace IMS.UseCases
     {
         private readonly IInventoryRepository inventoryRepository;
         private readonly IProductRepository productRepository;
-        private readonly IInventoryTransactionRepository inventoryTransactionRepository;
+        private readonly IInventoryTransactionsRepository inventoryTransactionRepository;
         private readonly IProductTransactionRepository productTransactionRepository;
 
         public ProduceProductUseCase(
             IInventoryRepository inventoryRepository,
             IProductRepository productRepository,
-            IInventoryTransactionRepository inventoryTransactionRepository,
+            IInventoryTransactionsRepository inventoryTransactionRepository,
             IProductTransactionRepository productTransactionRepository)
         {
             this.inventoryRepository = inventoryRepository;

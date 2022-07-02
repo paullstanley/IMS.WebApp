@@ -1,0 +1,5 @@
+/Users/paullstanley/Desktop/Inventory Management System/IMS.UseCases.dll
+/Users/paullstanley/Desktop/Inventory Management System/IMS.UseCases.deps.json
+/Users/paullstanley/Desktop/Inventory Management System/IMS.UseCases.pdb
+/Users/paullstanley/Desktop/Inventory Management System/IMS.CoreBusiness.dll
+/Users/paullstanley/Desktop/Inventory Management System/IMS.CoreBusiness.pdb

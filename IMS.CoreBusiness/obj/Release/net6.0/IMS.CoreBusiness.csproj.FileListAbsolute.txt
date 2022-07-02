@@ -1,0 +1,12 @@
+/Users/paullstanley/Projects/IMS.WebApp/IMS.CoreBusiness/bin/Release/net6.0/IMS.CoreBusiness.deps.json
+/Users/paullstanley/Projects/IMS.WebApp/IMS.CoreBusiness/bin/Release/net6.0/IMS.CoreBusiness.dll
+/Users/paullstanley/Projects/IMS.WebApp/IMS.CoreBusiness/bin/Release/net6.0/IMS.CoreBusiness.pdb
+/Users/paullstanley/Projects/IMS.WebApp/IMS.CoreBusiness/obj/Release/net6.0/IMS.CoreBusiness.csproj.AssemblyReference.cache
+/Users/paullstanley/Projects/IMS.WebApp/IMS.CoreBusiness/obj/Release/net6.0/IMS.CoreBusiness.GeneratedMSBuildEditorConfig.editorconfig
+/Users/paullstanley/Projects/IMS.WebApp/IMS.CoreBusiness/obj/Release/net6.0/IMS.CoreBusiness.AssemblyInfoInputs.cache
+/Users/paullstanley/Projects/IMS.WebApp/IMS.CoreBusiness/obj/Release/net6.0/IMS.CoreBusiness.AssemblyInfo.cs
+/Users/paullstanley/Projects/IMS.WebApp/IMS.CoreBusiness/obj/Release/net6.0/IMS.CoreBusiness.csproj.CoreCompileInputs.cache
+/Users/paullstanley/Projects/IMS.WebApp/IMS.CoreBusiness/obj/Release/net6.0/IMS.CoreBusiness.dll
+/Users/paullstanley/Projects/IMS.WebApp/IMS.CoreBusiness/obj/Release/net6.0/refint/IMS.CoreBusiness.dll
+/Users/paullstanley/Projects/IMS.WebApp/IMS.CoreBusiness/obj/Release/net6.0/IMS.CoreBusiness.pdb
+/Users/paullstanley/Projects/IMS.WebApp/IMS.CoreBusiness/obj/Release/net6.0/ref/IMS.CoreBusiness.dll

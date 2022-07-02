@@ -30,7 +30,7 @@ builder.Services.AddDbContext<IMSContext>(options =>
 //DI repos
 builder.Services.AddTransient<IInventoryRepository, InventoryRepository>();
 builder.Services.AddTransient<IProductRepository, ProductRepository>();
-builder.Services.AddTransient<IInventoryTransactionRepository, InventoryTransactionRepository>();
+builder.Services.AddTransient<IInventoryTransactionsRepository, InventoryTransactionsRepository>();
 builder.Services.AddTransient<IProductTransactionRepository, ProductTransactionRepository>();
 
 //DI use cases
@@ -48,7 +48,7 @@ builder.Services.AddTransient<IPurchaseInventoryUseCase, PurchaseInventoryUseCas
 builder.Services.AddTransient<IValidateEnoughInventoriesForProducingUseCase, ValidateEnoughInventoriesForProducingUseCase>();
 builder.Services.AddTransient<IProduceProductUseCase, ProduceProductUseCase>();
 builder.Services.AddTransient<ISellProductUseCase, SellProductUseCase>();
-builder.Services.AddTransient<ISearchInventoryTransactionUseCase, SearchInventoryTransactionUseCase>();
+builder.Services.AddTransient<ISearchInventoryTransactionsUseCase, SearchInventoryTransactionsUseCase>();
 builder.Services.AddTransient<ISearchProductTransactionUseCase, SearchProductTransactionUseCase>();
 
 var app = builder.Build();

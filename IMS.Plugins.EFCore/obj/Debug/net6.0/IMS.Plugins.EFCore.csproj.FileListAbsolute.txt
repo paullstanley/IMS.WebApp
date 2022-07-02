@@ -1,4 +1,5 @@
 /Users/paullstanley/Projects/IMS.WebApp/IMS.Plugins.EFCore/bin/Debug/net6.0/IMS.Plugins.EFCore.deps.json
+/Users/paullstanley/Projects/IMS.WebApp/IMS.Plugins.EFCore/bin/Debug/net6.0/IMS.Plugins.EFCore.runtimeconfig.json
 /Users/paullstanley/Projects/IMS.WebApp/IMS.Plugins.EFCore/bin/Debug/net6.0/IMS.Plugins.EFCore.dll
 /Users/paullstanley/Projects/IMS.WebApp/IMS.Plugins.EFCore/bin/Debug/net6.0/IMS.Plugins.EFCore.pdb
 /Users/paullstanley/Projects/IMS.WebApp/IMS.Plugins.EFCore/bin/Debug/net6.0/IMS.CoreBusiness.dll
@@ -14,6 +15,5 @@
 /Users/paullstanley/Projects/IMS.WebApp/IMS.Plugins.EFCore/obj/Debug/net6.0/IMS.Plugins.EFCore.dll
 /Users/paullstanley/Projects/IMS.WebApp/IMS.Plugins.EFCore/obj/Debug/net6.0/refint/IMS.Plugins.EFCore.dll
 /Users/paullstanley/Projects/IMS.WebApp/IMS.Plugins.EFCore/obj/Debug/net6.0/IMS.Plugins.EFCore.pdb
-/Users/paullstanley/Projects/IMS.WebApp/IMS.Plugins.EFCore/obj/Debug/net6.0/ref/IMS.Plugins.EFCore.dll
-/Users/paullstanley/Projects/IMS.WebApp/IMS.Plugins.EFCore/bin/Debug/net6.0/IMS.Plugins.EFCore.runtimeconfig.json
 /Users/paullstanley/Projects/IMS.WebApp/IMS.Plugins.EFCore/obj/Debug/net6.0/IMS.Plugins.EFCore.genruntimeconfig.cache
+/Users/paullstanley/Projects/IMS.WebApp/IMS.Plugins.EFCore/obj/Debug/net6.0/ref/IMS.Plugins.EFCore.dll
