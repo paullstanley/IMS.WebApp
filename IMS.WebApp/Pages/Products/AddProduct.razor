@@ -1,5 +1,7 @@
 ﻿@page "/addproduct"
 
+@attribute [Authorize]
+
 @inject IAddProductUseCase AddProductUseCase
 @inject NavigationManager NavigationManager
 
@@ -26,16 +28,14 @@
             <InputNumber id="price" @bind-Value="product.Price" class="form-control"></InputNumber>
         </div>
 
-        <ProductInventoriesComponent
-            @ref="ProductInventoriesComponent"
-            OnInventorySelected="OnInventorySelected"
-            ></ProductInventoriesComponent>
+        <ProductInventoriesComponent @ref="ProductInventoriesComponent"
+                                     OnInventorySelected="OnInventorySelected"></ProductInventoriesComponent>
 
         <br />
         <button type="submit" class="btn btn-primary">Save</button>
 
     </EditForm>
- }
+}
 
 
 @code {
@@ -58,7 +58,7 @@
                 x.ProductId = this.product.ProductId;
             });
 
-           // this.product.ProductInventories = this.ProductInventoriesComponent.ProductInventories;
+            // this.product.ProductInventories = this.ProductInventoriesComponent.ProductInventories;
 
             await AddProductUseCase.ExecuteAsync(this.product);
             NavigationManager.NavigateTo("/products");

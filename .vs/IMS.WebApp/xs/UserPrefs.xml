@@ -1,42 +1,24 @@
 ﻿<Properties StartupConfiguration="{2861D5E2-25AD-4956-9CA5-B5AF54244F9A}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="IMS.CoreBusiness/ProductTransaction.cs">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="IMS.WebApp/Pages/Reports/InventoryTransaction.razor" Line="4" Column="1" />
-      <File FileName="IMS.UseCases/Reports/SearchInventoryTransactionsUseCase.cs" Line="16" Column="44" />
-      <File FileName="IMS.CoreBusiness/InventoryTransaction.cs" Line="7" Column="3" />
-      <File FileName="IMS.WebApp/Program.cs" Line="1" Column="1" />
-      <File FileName="IMS.WebApp/_Imports.razor" Line="1" Column="1" />
-      <File FileName="IMS.CoreBusiness/InventoryTransactionType.cs" Line="1" Column="1" />
-      <File FileName="IMS.CoreBusiness/ProductTransaction.cs" Line="1" Column="1" />
-      <File FileName="IMS.CoreBusiness/ProductTransactionType.cs" Line="1" Column="1" />
+      <File FileName="IMS.WebApp/Pages/Reports/InventoryTransactions.razor" Line="103" Column="9" />
+      <File FileName="IMS.WebApp/wwwroot/css/site.css" Line="72" Column="29" />
+      <File FileName="IMS.WebApp/Pages/Reports/ProductTransactions.razor" Line="81" Column="7" />
+      <File FileName="IMS.WebApp/appsettings.json" Line="1" Column="1" />
+      <File FileName="IMS.WebApp/appsettings.Development.json" Line="1" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="IMS.WebApp" expanded="True">
-            <Node name="IMS.CoreBusiness" expanded="True">
-              <Node name="InventoryTransaction.cs" selected="True" />
-            </Node>
-            <Node name="IMS.Plugins.EFCore" expanded="True" />
-            <Node name="IMS.UseCases" expanded="True">
-              <Node name="Activities" expanded="True" />
-              <Node name="Interfaces" expanded="True" />
-              <Node name="Inventories" expanded="True" />
-              <Node name="PluginInterfaces" expanded="True" />
-              <Node name="Products" expanded="True" />
-              <Node name="Reports" expanded="True" />
-              <Node name="Validations" expanded="True" />
-            </Node>
-            <Node name="IMS.WebApp" expanded="True">
-              <Node name="Pages" expanded="True">
-                <Node name="Products" expanded="True" />
-                <Node name="Reports" expanded="True" />
-              </Node>
-              <Node name="Shared" expanded="True" />
-              <Node name="ViewModels" expanded="True" />
+            <Node name="IMS.Plugins.EFCore" expanded="True">
+              <Node name="ConnectedServicesFolder" selected="True" />
             </Node>
           </Node>
         </State>
@@ -46,8 +28,5 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.IMS.WebApp PreferredExecutionTarget="/Applications/Safari.app" />
-  <MultiItemStartupConfigurations />
 </Properties>

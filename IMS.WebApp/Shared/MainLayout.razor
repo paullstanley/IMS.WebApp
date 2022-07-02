@@ -1,21 +1,121 @@
 ﻿@inherits LayoutComponentBase
 
-<PageTitle>IMS.WebApp</PageTitle>
+<PageTitle>IMS</PageTitle>
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
-
-    <main>
-        <div class="top-row px-4 auth">
-            <LoginDisplay />
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">Inventory Management</a>
+        <button class="navbar-toggler p-0 border-0" type="button" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="" Match="NavLinkMatch.All" @onclick="CollapseSubNavMenu">
+                        Home
+                    </NavLink>
+                </li>
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="inventories" @onclick="CollapseSubNavMenu">
+                        Inventories
+                    </NavLink>
+                </li>
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="products" @onclick="CollapseSubNavMenu">
+                        Products
+                    </NavLink>
+                </li>
+                <li class="nav-item dropdown">
+                    <NavLink class="nav-link dropdown-toggle" href="#" @onclick="ToggleSubNavMenu" id="navbarDropdown">
+                        Activities
+                    </NavLink>
+                    @if (expandSubNavSettings)
+            {
+                <ul class="dropdown-menu show" aria-labelledby="navDropdown" @onclick="ToggleSubNavMenu">
+                    <li class="nav-item">
+                        <NavLink class="dropdown-item" href="purchase">
+                            <span class="oi oi-fork" area-hidden="true"></span> Purchase
+                        </NavLink>
+                    </li>
+                    <li class="Nav-item">
+                        <NavLink class="dropdown-item" href="produce">
+                            <span class="oi oi-command" aria-hidden="true"></span> Produce
+                        </NavLink>
+                    </li>
+                    <li class="Nav-item">
+                        <NavLink class="dropdown-item" href="sell">
+                            <span class="oi oi-command" aria-hidden="true"></span> Sell
+                        </NavLink>
+                    </li>
+                </ul>
+            }
+                </li>
+                <li class="nav-item dropdown">
+                    <NavLink class="nav-link dropdown-toggle" href="#" @onclick="ToggleSubNavMenu1" id="navbarDropdown">
+                        Reports
+                    </NavLink>
+                    @if (expandSubNavSettings1)
+            {
+                <ul class="dropdown-menu show" aria-labelledby="navbarDropdown" @onclick="ToggleSubNavMenu1">
+                    <li class="nav-item">
+                        <NavLink class="dropdown-item" href="inventoryreport">
+                            <span class="oi oi-fork" aria-hidden="true"></span> Inventory Transactions
+                        </NavLink>
+                    </li>
+                    <li class="nav-item">
+                        <NavLink class="dropdown-item" href="productreport">
+                            <span class="oi oi-command" aria-hidden="true"></span> Product Transactions
+                        </NavLink>
+                    </li>
+                </ul>
+            }
+                </li>
+            </ul>
+                <LoginDisplay></LoginDisplay>
         </div>
-
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
+    </div>
+</nav>
+<br />
+<main class="content px-3">
+    <br />
+<div class="bg-light p-5 rounded">
+    @Body
 </div>
+</main>
 
+@code{
+    bool collapseNavMenu = true;
+
+    private bool expandSubNavSettings;
+    private bool expandSubNavSettings1;
+
+    string baseMenuClass = "navbar-collapse offcanvas-collapse";
+
+    string NavMenuCssClass => baseMenuClass + (collapseNavMenu ? " collapse" : "");
+
+    void ToggleNavMenu()
+    {
+        if(!expandSubNavSettings)
+        {
+            collapseNavMenu = !collapseNavMenu;
+        }
+    }
+
+    void ToggleSubNavMenu()
+    {
+        expandSubNavSettings1 = false;
+        expandSubNavSettings = !expandSubNavSettings;
+    }
+
+    void ToggleSubNavMenu1()
+    {
+        expandSubNavSettings = false;
+        expandSubNavSettings1 = !expandSubNavSettings1;
+    }
+
+    void CollapseSubNavMenu()
+    {
+        expandSubNavSettings = false;
+        expandSubNavSettings1 = false;
+    }
+}

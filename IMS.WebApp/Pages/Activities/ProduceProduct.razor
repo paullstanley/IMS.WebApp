@@ -1,5 +1,7 @@
 ﻿@page "/produce"
 
+@attribute [Authorize]
+
 @inject IProduceProductUseCase ProduceProductUseCase
 @inject IValidateEnoughInventoriesForProducingUseCase ValidateEnoughInventoriesForProducingUseCase
 

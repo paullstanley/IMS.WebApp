@@ -1,54 +1,60 @@
 ﻿@page "/productreport"
 
 @inject ISearchProductTransactionUseCase SearchProductTransactionUseCase
+@inject IJSRuntime JSRuntime
 
 
 <h3>Product Transactions</h3>
 <br />
 
-<div class="row">
-    <div class="col">
-        <label for="inv">Product Name</label>
-        <input type="text" id="inv" class="form-control" @bind-value="prodName" />
+<div id="printarea">
+    <div class="row">
+        <div class="col">
+            <label for="inv">Product Name</label>
+            <input type="text" id="inv" class="form-control" @bind-value="prodName" />
+        </div>
+        <div class="col">
+            <label for="df">Date From</label>
+            <input type="date" id="df" class="form-control" @bind-value="dateFrom" />
+        </div>
+        <div class="col">
+            <label for="dt">Date To</label>
+            <input type="date" id="dt" class="form-control" @bind-value="dateTo" />
+        </div>
+        <div class="col">
+            <label for="at">Activity Type</label>
+            <select id="at" class="form-control" @bind="activityTypeId">
+                <option id="0"></option>
+                <option id="1">Product Product</option>
+                <option id="2">Sell Product</option>
+            </select>
+        </div>
+        <div class="col">
+            <label>&nbsp;</label>
+            <button type="button" class="btn btn-primary form-control" @onclick="@(async() => { await SearchProducts(); })">Search</button>
+        </div>
+        <div class="col">
+            <label>&nbsp;</label>
+            <button type="button" class="btn btn-primary form-control" @onclick="PrintReport">Print</button>
+        </div>
     </div>
-    <div class="col">
-        <label for="df">Date From</label>
-        <input type="date" id="df" class="form-control" @bind-value="dateFrom" />
-    </div>
-    <div class="col">
-        <label for="dt">Date To</label>
-        <input type="date" id="dt" class="form-control" @bind-value="dateTo" />
-    </div>
-    <div class="col">
-        <label for="at">Activity Type</label>
-        <select id="at" class="form-control" @bind="activityTypeId">
-            <option id="0"></option>
-            <option id="1">Product Product</option>
-            <option id="2">Sell Product</option>
-        </select>
-    </div>
-    <div class="col">
-        <label>&nbsp;</label>
-        <button type="button" class="btn btn-primary form-control" @onclick="@(async() => { await SearchProducts(); })">Search</button>
-    </div>
-</div>
-<br />
-@if (productTransactions != null)
-{
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Product</th>
-                <th>Activity</th>
-                <th>Qty Before</th>
-                <th>Qty After#</th>
-                <th>Production #</th>
-                <th>SO#</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach(var pt in productTransactions)
+    <br />
+    @if (productTransactions != null)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Product</th>
+                    <th>Activity</th>
+                    <th>Qty Before</th>
+                    <th>Qty After#</th>
+                    <th>Production #</th>
+                    <th>SO#</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var pt in productTransactions)
                 {
                     <tr>
                         <td>@pt.TransactionDate.ToString("MM/dd/yyyy")</td>
@@ -69,10 +75,10 @@
                         <td>@pt.SalesOrderNumber</td>
                     </tr>
                 }
-        </tbody>
-    </table>
-}
-
+            </tbody>
+        </table>
+    }
+</div>
 
 @code {
     private string prodName;
@@ -93,6 +99,11 @@
             dateTo,
             productTransactionType);
 
+    }
+
+    private void PrintReport()
+    {
+        JSRuntime.InvokeVoidAsync("print");
     }
 
 }

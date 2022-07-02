@@ -1,5 +1,7 @@
 ﻿@page "/sell"
 
+@attribute [Authorize]
+
 @inject ISellProductUseCase SellProductUseCase
 
 <ErrorMessageComponent ErrorMessage="@errorMessage"></ErrorMessageComponent>
@@ -26,8 +28,8 @@
         </div>
 
         <div class="form-group">
-        <label for="qty">Price</label>
-        <InputNumber id="price" @bind-Value="sellViewModel.ProductPrice" class="form-control"></InputNumber>
+            <label for="qty">Price</label>
+            <InputNumber id="price" @bind-Value="sellViewModel.ProductPrice" class="form-control"></InputNumber>
         </div>
 
         <div class="form-group">
@@ -47,7 +49,7 @@
 
     private void OnValidSubmit()
     {
-        if(this.selectedProduct.Quantity < this.sellViewModel.QuantityToSell)
+        if (this.selectedProduct.Quantity < this.sellViewModel.QuantityToSell)
         {
             this.errorMessage = $"The quantity of the product is not enough. Only {this.selectedProduct.Quantity} are available";
             return;

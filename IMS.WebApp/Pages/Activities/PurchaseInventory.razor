@@ -1,5 +1,7 @@
 ﻿@page "/purchase"
 
+@attribute [Authorize]
+
 @inject IPurchaseInventoryUseCase PurchaseInventoryUseCase
 
 @using IMS.WebApp.ViewModels
@@ -26,10 +28,10 @@
             <input type="hidden" value="@purchaseViewModel.InventoryId" />
 
             @if (selectedInventory != null)
-                {
-                    <text>Price:</text>
-                    @selectedInventory?.Price.ToString("c")
-                }
+            {
+                <text>Price:</text>
+                @selectedInventory?.Price.ToString("c")
+            }
         </div>
 
         <div class="form-group">

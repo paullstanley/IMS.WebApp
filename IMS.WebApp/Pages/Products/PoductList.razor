@@ -1,5 +1,7 @@
 ﻿@page "/products"
 
+@attribute [Authorize]
+
 @inject NavigationManager NavigationManager
 @inject IViewProductsByNameUseCase ViewProductsByNameUseCase
 
@@ -23,9 +25,8 @@
         <tbody>
             @foreach (var product in this.listProducts)
             {
-                <ProductItemComponent
-                    Product="product"
-                    OnProductDeleted="OnProductDeleted"></ProductItemComponent>
+                <ProductItemComponent Product="product"
+                                      OnProductDeleted="OnProductDeleted"></ProductItemComponent>
             }
         </tbody>
     </table>
