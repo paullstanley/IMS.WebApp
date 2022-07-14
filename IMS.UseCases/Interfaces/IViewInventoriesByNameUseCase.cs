@@ -5,6 +5,6 @@ namespace IMS.UseCases
 {
     public interface IViewInventoriesByNameUseCase
     {
-        Task<IEnumerable<Inventory>> ExecuteAsync(string name = "");
+        Task<List<Inventory>> ExecuteAsync(string name = "");
     }
 }

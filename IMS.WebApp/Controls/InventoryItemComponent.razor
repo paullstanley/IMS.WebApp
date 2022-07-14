@@ -1,4 +1,5 @@
 ﻿@inject NavigationManager NavigationManager
+@inject IDeleteInventoriesUseCase DeleteInventoriesUseCase
 
 @if (Inventory != null)
     {
@@ -8,20 +9,29 @@
         <td>@Inventory.Price.ToString("c")</td>
         <td>
             <button type="button" class="btn btn-light" @onclick="@(() => EditInventory(Inventory.InventoryId))">Edit</button>
+            <button type="button" class="btn btn-light" @onclick="@(async () => await DeleteInventory(Inventory))">Delete</button>
         </td>
     </tr>
     }
-
 
 @code {
 
     [Parameter]
     public Inventory? Inventory { get; set; }
 
+    [Parameter]
+    public EventCallback OnInventoryDeleted { get; set; }
+
     private void EditInventory(int invId)
     {
         NavigationManager.NavigateTo($"/editinventory/{invId}");
     }
 
+    private async Task DeleteInventory(Inventory inventory)
+    {
+        await DeleteInventoriesUseCase.ExecuteAsync(inventory.InventoryId);
+
+        await OnInventoryDeleted.InvokeAsync();
+    }
 }
 

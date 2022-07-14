@@ -18,9 +18,10 @@ namespace IMS.UseCases
             foreach (var pi in prod.ProductInventories)
             {
                 if (pi.InventoryQuantity * quantity > pi.Inventory.Quantity)
+                {
                     return false;
+                }
             }
-
             return true;
         }
     }

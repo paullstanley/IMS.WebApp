@@ -7,7 +7,6 @@ namespace IMS.Plugins.EFCore
     {
         public IMSContext(DbContextOptions options) : base(options)
         {
-
         }
 
         public DbSet<Inventory> Inventories { get; set; }
@@ -32,7 +31,6 @@ namespace IMS.Plugins.EFCore
                 .HasOne(pi => pi.Inventory)
                 .WithMany(i => i.ProductInventories)
                 .HasForeignKey(pi => pi.InventoryId);
-
 
 			//seeding data
 			modelBuilder.Entity<Inventory>().HasData(

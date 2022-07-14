@@ -1,6 +1,5 @@
 ﻿@page "/produce"
-
-@attribute [Authorize]
+@*@attribute [Authorize]*@
 
 @inject IProduceProductUseCase ProduceProductUseCase
 @inject IValidateEnoughInventoriesForProducingUseCase ValidateEnoughInventoriesForProducingUseCase
@@ -22,7 +21,7 @@
         <div class="form-group">
             <label for="inv">Product to Produce</label>
             <ViewProductsComponent OnSelectProduct="OnSelectProduct"
-                                      DisplaySearchResult="true"></ViewProductsComponent>
+                                   DisplaySearchResult="true"></ViewProductsComponent>
             <InputText id="inv" class="form-control" @bind-Value="produceViewModel.ProductName" disabled></InputText>
             <input type="hidden" value="@produceViewModel.ProductId" />
 
@@ -50,9 +49,9 @@
 
     private async Task OnValidSubmit()
     {
-        if(!await ValidateEnoughInventoriesForProducingUseCase.ExecuteAsync(this.selectedProduct, this.produceViewModel.QuantityToProduce))
+        if (!await ValidateEnoughInventoriesForProducingUseCase.ExecuteAsync(this.selectedProduct, this.produceViewModel.QuantityToProduce))
         {
-            errorMessage = $"The inventories are not enough for producing {this.produceViewModel.QuantityToProduce} { this.selectedProduct.ProductName }";
+            errorMessage = $"The inventories are not enough for producing {this.produceViewModel.QuantityToProduce} {this.selectedProduct.ProductName}";
 
             return;
         }

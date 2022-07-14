@@ -10,7 +10,6 @@
   <ItemGroup>
     <None Remove="Microsoft.EntityFrameworkCore.InMemory" />
     <None Remove="Controls\" />
-    <None Remove="Data\Migrations\" />
     <None Remove="Pages\Inventories\" />
     <None Remove="Pages\Products\" />
     <None Remove="ViewModels\" />
@@ -18,16 +17,18 @@
     <None Remove="Pages\Reports\" />
     <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
     <None Remove="Azure.Storage.Blobs" />
+    <None Remove="Microsoft.EntityFrameworkCore.SqlServer.Design" />
+    <None Remove="Microsoft.EntityFrameworkCore.Design" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.6" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.6" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.6" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.6" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.6" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.6" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.6" />
-    <PackageReference Include="Azure.Storage.Blobs" Version="12.12.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.7"><IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+<PrivateAssets>all</PrivateAssets>
+</PackageReference>
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.13.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.7" />
   </ItemGroup>
 
   <ItemGroup>
@@ -46,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\" />
-    <Folder Include="Data\Migrations\" />
     <Folder Include="Pages\Inventories\" />
     <Folder Include="Pages\Products\" />
     <Folder Include="ViewModels\" />

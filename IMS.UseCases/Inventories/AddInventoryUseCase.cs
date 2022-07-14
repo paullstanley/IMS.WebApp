@@ -14,6 +14,7 @@ namespace IMS.UseCases
 
         public async Task ExecuteAsync(Inventory inventory)
         {
+            if (inventory == null) return;
 
             await inventoryRepository.AddInventoryAsync(inventory);
         }

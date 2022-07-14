@@ -5,25 +5,26 @@
            class="form-control form-control-lg"
            placeholder="Type inventory name here to search"
            @bind-value="inventoryNameToSearch"
-           @bind-value:event="oninput"/>
+           @bind-value:event="oninput" />
     <button type="button" class="input-group-text btn-success"
-            @onclick="@(async ()=> { await ViewInventories(); } )">View</button>
+            @onclick="@(async ()=> { await ViewInventories(); } )">
+        View
+    </button>
 </div>
 @if (this.DisplaySearchResult
-        && _inventories != null
-        && selectedInventory == null)
+       && _inventories != null
+       && selectedInventory == null)
 {
     <div style="overflow-y:auto; max-height:300px; border:1px solid silver; padding-top:5px">
         <ul style="list-style-type:none">
-            @foreach(var inv in _inventories)
+            @foreach (var inv in _inventories)
             {
                 <li style="cursor:pointer" @onclick="@(async() => { await SelectInventory(inv); })"
                     @key="inv.InventoryId">@inv.InventoryName</li>
-            }
+                }
         </ul>
     </div>
 }
-
 
 @code {
 
@@ -36,18 +37,17 @@
             _inventoryNameToSearch = value;
             if (!string.IsNullOrWhiteSpace(_inventoryNameToSearch) &&
                 _inventoryNameToSearch.Length > 2)
-                {
-                    ViewInventories();
-                }
+            {
+                ViewInventories();
+            }
         }
-
     }
 
     private List<Inventory>? _inventories;
     private Inventory? selectedInventory;
 
     [Parameter]
-    public EventCallback<List<Inventory>> OnSearchInventories{ get; set; }
+    public EventCallback<List<Inventory>> OnSearchInventories { get; set; }
 
     [Parameter]
     public EventCallback<Inventory> OnSelectInventory { get; set; }
@@ -58,7 +58,7 @@
     private async Task ViewInventories()
     {
         var inventories = (await ViewInventoriesByNameUseCase
-            .ExecuteAsync(inventoryNameToSearch??string.Empty))?.ToList();
+            .ExecuteAsync(inventoryNameToSearch ?? string.Empty))?.ToList();
 
         await OnSearchInventories.InvokeAsync(inventories);
         _inventories = inventories;

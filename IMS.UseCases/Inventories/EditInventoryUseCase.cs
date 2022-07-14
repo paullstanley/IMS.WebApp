@@ -16,7 +16,6 @@ namespace IMS.UseCases
         {
             await this.inventoryRepository.UpdateInventoryAsync(inventory);
         }
-
     }
 }
 

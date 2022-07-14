@@ -6,8 +6,7 @@
            class="form-control form-control-lg"
            placeholder="Type product name here to search"
            @bind-value="_productNameToSearch"
-           @bind-value:event="oninput"
-           />
+           @bind-value:event="oninput" />
     <button type="button" class="input-group-text btn-success"
             @onclick="@(async ()=> { await ViewProducts(); } )">
         View
@@ -15,8 +14,8 @@
 </div>
 
 @if (this.DisplaySearchResult
-       && _products != null
-       && selectedProduct == null)
+      && _products != null
+      && selectedProduct == null)
 {
     <div style="overflow-y:auto; max-height:300px; border:1px solid silver; padding-top:5px">
         <ul style="list-style-type:none">
@@ -28,7 +27,6 @@
         </ul>
     </div>
 }
-
 
 @code {
 

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using IMS.WebApp.Areas.Identity;
@@ -8,13 +9,15 @@ using IMS.UseCases;
 using IMS.UseCases.PluginInterfaces;
 using IMS.UseCases.Reports;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlite(connectionString));
+    options.UseSqlServer(connectionString));
+
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
@@ -25,8 +28,10 @@ builder.Services.AddSingleton<WeatherForecastService>();
 
 builder.Services.AddDbContext<IMSContext>(options =>
 {
-    options.UseInMemoryDatabase("IMS");
+    options.UseSqlServer(builder.Configuration.GetConnectionString("InventoryManagement"));
+    //x => x.MigrationsAssembly("IMS.WebApp"));
 });
+
 //DI repos
 builder.Services.AddTransient<IInventoryRepository, InventoryRepository>();
 builder.Services.AddTransient<IProductRepository, ProductRepository>();
@@ -38,6 +43,7 @@ builder.Services.AddTransient<IViewInventoriesByNameUseCase, ViewInventoriesByNa
 builder.Services.AddTransient<IAddInventoryUseCase, AddInventoryUseCase>();
 builder.Services.AddTransient<IEditInventoryUseCase, EditInventoryUseCase>();
 builder.Services.AddTransient<IViewInventoryByIdUseCase, ViewInventoryByIdUseCase>();
+builder.Services.AddTransient<IDeleteInventoriesUseCase, DeleteInventoriesUseCase>();
 
 builder.Services.AddTransient<IViewProductsByNameUseCase, ViewProductsByNameUseCase>();
 builder.Services.AddTransient<IAddProductUseCase, AddProductUseCase>();
@@ -55,8 +61,8 @@ var app = builder.Build();
 
 var scope = app.Services.CreateScope();
 var imsContext = scope.ServiceProvider.GetRequiredService<IMSContext>();
-imsContext.Database.EnsureDeleted();
-imsContext.Database.EnsureCreated();
+//imsContext.Database.EnsureDeleted();
+//imsContext.Database.EnsureCreated();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

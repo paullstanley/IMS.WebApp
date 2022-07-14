@@ -10,7 +10,6 @@ namespace IMS.UseCases.Reports
         public SearchInventoryTransactionsUseCase(IInventoryTransactionsRepository inventoryTransactionsRepository)
         {
             this.inventoryTransactionsRepository = inventoryTransactionsRepository;
-
         }
 
         public async Task<IEnumerable<InventoryTransaction>> ExecuteAsync(

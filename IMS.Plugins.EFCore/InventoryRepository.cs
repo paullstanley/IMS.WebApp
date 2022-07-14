@@ -13,26 +13,42 @@ namespace IMS.Plugins.EFCore
             this.db = db;
         }
 
-        public async Task<IEnumerable<Inventory>> GetInventoriesByName(string name)
+        public async Task<List<Inventory>> GetInventoriesByName(string name)
         {
-            return await this.db.Inventories.Where(x => x.InventoryName.Contains(name, StringComparison.OrdinalIgnoreCase) ||
-                                                    string.IsNullOrWhiteSpace(name)).ToListAsync();
+            return await db.Inventories.Where(x => x.InventoryName.ToLower().IndexOf(name.ToLower()) >= 0 ||
+                                                    string.IsNullOrWhiteSpace(name) &&
+                                                    x.IsActive == true).ToListAsync();
+        }
+
+        public async Task<Inventory?> GetInventoryByIdAsync(int inventoryId)
+        {
+            return await db.Inventories.FindAsync(inventoryId);
         }
 
         public async Task AddInventoryAsync(Inventory inventory)
         {
             //To prevent different inventories from having the same name
-            if (db.Inventories.Any(x => x.InventoryName.Equals(inventory.InventoryName, StringComparison.OrdinalIgnoreCase))) return;
+            if (db.Inventories.Any(x => x.InventoryName.ToLower() == inventory.InventoryName.ToLower())) return;
 
-            this.db.Inventories.Add(inventory);
-            await this.db.SaveChangesAsync();
+            db.Inventories.Add(inventory);
+            await db.SaveChangesAsync();
+        }
+
+        public async Task DeleteInventoryAsync(int inventoryId)
+        {
+            var inventory = await db.Inventories.FindAsync(inventoryId);
+
+            if (inventory != null)
+            {
+                db.Remove(inventory);
+                await db.SaveChangesAsync();
+            }
         }
 
         public async Task UpdateInventoryAsync(Inventory inventory)
         {
-            //To prevent different inventories from having the same name
             if (db.Inventories.Any(x => x.InventoryId != inventory.InventoryId &&
-            x.InventoryName.Equals(inventory.InventoryName, StringComparison.OrdinalIgnoreCase))) return;
+            x.InventoryName.ToLower() == inventory.InventoryName.ToLower())) return;
 
             var inv = await this.db.Inventories.FindAsync(inventory.InventoryId);
             if (inv != null)
@@ -43,11 +59,6 @@ namespace IMS.Plugins.EFCore
 
                 await db.SaveChangesAsync();
             }
-        }
-
-        public async Task<Inventory?> GetInventoryByIdAsync(int inventoryId)
-        {
-            return await this.db.Inventories.FindAsync(inventoryId);
         }
     }
 }

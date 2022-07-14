@@ -2,7 +2,7 @@
 @inject IDeleteProductUseCase DeleteProductUseCase
 
 @if (Product != null)
-    {
+{
     <tr>
         <td>@Product.ProductName</td>
         <td>@Product.Quantity</td>
@@ -12,7 +12,7 @@
             <button type="button" class="btn btn-light" @onclick="@(async () => await DeleteProduct(Product))">Delete</button>
         </td>
     </tr>
-    }
+}
 
 
 @code {
@@ -21,7 +21,7 @@
     public Product? Product { get; set; }
 
     [Parameter]
-    public EventCallback OnProductDeleted {  get; set; }
+    public EventCallback OnProductDeleted { get; set; }
 
     private void EditProduct(int productId)
     {
@@ -34,6 +34,5 @@
 
         await OnProductDeleted.InvokeAsync();
     }
-
-    }
+}
 

@@ -1,18 +1,54 @@
 ﻿<Properties StartupConfiguration="{2861D5E2-25AD-4956-9CA5-B5AF54244F9A}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="IMS.WebApp/Pages/Index.razor">
+  <MultiItemStartupConfigurations>
+    <MultiItemSolutionRunConfiguration Id="Multiple Projects" Name="Multiple Projects" />
+  </MultiItemStartupConfigurations>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.IMS.WebApp PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="IMS.WebApp/Pages/_Host.cshtml">
     <Files>
-      <File FileName="IMS.WebApp/Pages/Index.razor" Line="8" Column="15" />
+      <File FileName="IMS.WebApp/Pages/Products/AddProduct.razor" Line="9" Column="27" />
+      <File FileName="IMS.WebApp/Pages/Products/EditProduct.razor" Line="12" Column="27" />
+      <File FileName="IMS.WebApp/Pages/Products/PoductList.razor" Line="10" Column="66" />
+      <File FileName="IMS.WebApp/Pages/_Host.cshtml" Line="10" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="IMS.WebApp" expanded="True">
+            <Node name="IMS.CoreBusiness" expanded="True" />
+            <Node name="IMS.Plugins.EFCore" expanded="True" />
+            <Node name="IMS.UseCases" expanded="True">
+              <Node name="Inventories" expanded="True" />
+              <Node name="PluginInterfaces" expanded="True" />
+              <Node name="Products" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="Reports" expanded="True" />
+              <Node name="Validations" expanded="True" />
+            </Node>
             <Node name="IMS.WebApp" expanded="True">
-              <Node name="Areas" expanded="True" />
-              <Node name="Pages" expanded="True" />
-              <Node name="wwwroot" expanded="True">
-                <Node name="Images" expanded="True" />
+              <Node name="Controls" expanded="True" />
+              <Node name="Data" expanded="True" />
+              <Node name="Pages" expanded="True">
+                <Node name="Activities" expanded="True" />
+                <Node name="Inventories" expanded="True" />
+                <Node name="Products" expanded="True" />
+                <Node name="_Host.cshtml" selected="True" />
               </Node>
+              <Node name="Properties" expanded="True">
+                <Node name="PublishProfiles" expanded="True" />
+              </Node>
+              <Node name="Shared" expanded="True">
+                <Node name="NavMenu.razor" expanded="True" />
+              </Node>
+              <Node name="ViewModels" expanded="True" />
+              <Node name="wwwroot" expanded="True">
+                <Node name="css" expanded="True" />
+              </Node>
+              <Node name="appsettings.json" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -22,11 +58,4 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.IMS.WebApp PreferredExecutionTarget="/Applications/Safari.app" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
 </Properties>

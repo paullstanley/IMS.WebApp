@@ -7,7 +7,6 @@ namespace IMS.Plugins.EFCore
 {
 	public class InventoryTransactionsRepository: IInventoryTransactionsRepository
     {
-
 		private readonly IMSContext db;
 
         public InventoryTransactionsRepository(IMSContext db)
@@ -25,7 +24,7 @@ namespace IMS.Plugins.EFCore
             var query = from it in db.InventoryTransactions
                         join inv in db.Inventories on it.InventoryId equals inv.InventoryId
                         where
-                        (string.IsNullOrWhiteSpace(inventoryName) || inv.InventoryName.Contains(inventoryName, StringComparison.OrdinalIgnoreCase)) &&
+                        (string.IsNullOrWhiteSpace(inventoryName) || inv.InventoryName.ToLower().IndexOf(inventoryName.ToLower()) >= 0) &&
                         (!dateFrom.HasValue || it.TransactionDate >= dateFrom.Value.Date) &&
                         (!dateTo.HasValue || it.TransactionDate <= dateTo.Value.Date) &&
                         (!transactionType.HasValue || it.ActivityType == transactionType)
@@ -48,11 +47,8 @@ namespace IMS.Plugins.EFCore
                 UnitPrice = price * quantity
 
             });
-
             await db.SaveChangesAsync();
         }
-
-		
 	}
 }
 

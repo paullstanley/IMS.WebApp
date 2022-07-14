@@ -1,6 +1,5 @@
 ﻿@page "/inventories"
-
-@attribute [Authorize]
+@*@attribute [Authorize]*@
 
 @inject NavigationManager NavigationManager
 @inject IViewInventoriesByNameUseCase ViewInventoriesByNameUseCase
@@ -23,7 +22,8 @@
         <tbody>
             @foreach (var inv in this.listInventories)
             {
-                <InventoryItemComponent Inventory="inv"></InventoryItemComponent>
+                <InventoryItemComponent Inventory="inv"
+                                        OnInventoryDeleted="OnInventoryDeleted"></InventoryItemComponent>
             }
         </tbody>
     </table>
@@ -37,19 +37,28 @@
 
     protected override async Task OnInitializedAsync()
     {
-
-        var invs = await ViewInventoriesByNameUseCase.ExecuteAsync();
-        this.listInventories = invs.ToList();
+        await LoadInventories();
     }
 
     private void OnSearchInventories(List<Inventory> inventories)
     {
-        listInventories = inventories;
+        this.listInventories = inventories;
     }
 
     private void AddInventory()
     {
         NavigationManager.NavigateTo("/addinventory");
+    }
+
+    private async Task OnInventoryDeleted()
+    {
+        await LoadInventories();
+    }
+
+    private async Task LoadInventories()
+    {
+        var inv = await ViewInventoriesByNameUseCase.ExecuteAsync();
+        this.listInventories = inv.ToList();
     }
 }
 
