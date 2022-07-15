@@ -1,6 +1,4 @@
-﻿using IMS.UseCases.PluginInterfaces;
-
-namespace IMS.UseCases.Inventories
+﻿namespace IMS.UseCases.PluginInterfaces
 {
     public class DeleteInventoriesUseCase : IDeleteInventoriesUseCase
     {

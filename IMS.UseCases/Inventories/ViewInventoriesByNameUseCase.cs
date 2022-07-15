@@ -5,6 +5,13 @@ namespace IMS.UseCases
 {
     public class ViewInventoriesByNameUseCase : IViewInventoriesByNameUseCase
     {
+
+        public event Action RefreshRequested;
+        public void CallRequestRefresh()
+        {
+            RefreshRequested?.Invoke();
+        }
+
         private readonly IInventoryRepository inventoryRepository;
 
         public ViewInventoriesByNameUseCase(IInventoryRepository inventoryRepository)

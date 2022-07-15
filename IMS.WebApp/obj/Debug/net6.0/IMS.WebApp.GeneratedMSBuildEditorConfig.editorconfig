@@ -19,6 +19,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/Controls/ConfirmationDialogueComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29udHJvbHMvQ29uZmlybWF0aW9uRGlhbG9ndWVDb21wb25lbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/paullstanley/Projects/IMS.WebApp/IMS.WebApp/Controls/ErrorMessageComponent.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29udHJvbHMvRXJyb3JNZXNzYWdlQ29tcG9uZW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 

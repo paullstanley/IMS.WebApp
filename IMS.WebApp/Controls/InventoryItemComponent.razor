@@ -1,18 +1,26 @@
-﻿@inject NavigationManager NavigationManager
+﻿@using IMS.WebApp.Pages.Inventories 
+
+@inject NavigationManager NavigationManager
 @inject IDeleteInventoriesUseCase DeleteInventoriesUseCase
+@inject IViewInventoriesByNameUseCase ViewInventoriesByNameUseCase
+
+
 
 @if (Inventory != null)
-    {
+{
+
     <tr>
         <td>@Inventory.InventoryName</td>
         <td>@Inventory.Quantity</td>
         <td>@Inventory.Price.ToString("c")</td>
         <td>
             <button type="button" class="btn btn-light" @onclick="@(() => EditInventory(Inventory.InventoryId))">Edit</button>
-            <button type="button" class="btn btn-light" @onclick="@(async () => await DeleteInventory(Inventory))">Delete</button>
+            <button type="button" class="btn btn-light" @onclick="@(() => Delete_Click())">Delete</button>
+            <ConfirmationDialogueComponent @ref="DeleteConfirmation" ConfirmationChanged="ConfirmDelete_Click"
+                                           ConfirmationMessage=@($"Are you sure you want to delete")></ConfirmationDialogueComponent>
         </td>
     </tr>
-    }
+}
 
 @code {
 
@@ -22,9 +30,29 @@
     [Parameter]
     public EventCallback OnInventoryDeleted { get; set; }
 
+    protected ConfirmationDialogueComponent DeleteConfirmation { get; set; }
+
+    [CascadingParameter]
+    public InventoryList _Parent { get; set; }
+
     private void EditInventory(int invId)
     {
         NavigationManager.NavigateTo($"/editinventory/{invId}");
+    }
+
+    protected void Delete_Click()
+    {
+        DeleteConfirmation.Show();
+    }
+
+    protected async Task ConfirmDelete_Click(bool deleteConfirmed)
+    {
+        if (deleteConfirmed)
+        {
+            await DeleteInventory(Inventory);
+            await _Parent.RefreshState();
+
+        }
     }
 
     private async Task DeleteInventory(Inventory inventory)

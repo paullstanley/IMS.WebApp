@@ -22,10 +22,11 @@
         <tbody>
             @foreach (var inv in this.listInventories)
             {
-                <InventoryItemComponent Inventory="inv"
-                                        OnInventoryDeleted="OnInventoryDeleted"></InventoryItemComponent>
-            }
-        </tbody>
+                <CascadingValue Value="@this">
+                    <InventoryItemComponent Inventory="inv"></InventoryItemComponent>
+                </CascadingValue>
+                    }
+            </tbody>
     </table>
 }
 <br />
@@ -59,6 +60,13 @@
     {
         var inv = await ViewInventoriesByNameUseCase.ExecuteAsync();
         this.listInventories = inv.ToList();
+    }
+
+    public async Task RefreshState()
+    {
+        await LoadInventories();
+
+        this.StateHasChanged();
     }
 }
 
